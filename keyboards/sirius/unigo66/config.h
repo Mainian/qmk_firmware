@@ -15,18 +15,22 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// do not #include "config_common.h" because the pin names conflict with the USB HID code.
+// CUSTOM_MATRIX is defined it that file, though, and we need it, so we define it ourselves.
+// It's a hack, yeah...
 
 #define CUSTOM_MATRIX 2
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x5369
-#define PRODUCT_ID      0x005B
-#define DEVICE_VER      0x0814
+#define VENDOR_ID       0xFEED
+#define PRODUCT_ID      0x1001
+#define DEVICE_VER      0x1901
 #define MANUFACTURER    Sirius
 #define PRODUCT         UniGo66
 #define DESCRIPTION     UniGo66 Wireless Split keyboard
-
 
 /* size of virtual matrix */
 #define MATRIX_ROWS 16
@@ -52,3 +56,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
+
+#endif
