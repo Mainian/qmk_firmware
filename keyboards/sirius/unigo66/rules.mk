@@ -21,7 +21,7 @@ MCU = atmega32u4
 # The value here is only a fallback and is ignored if it is defined in the subproject.
 F_CPU = 16000000
 
-DEFAULT_FOLDER = sirius/unigo66
+#DEFAULT_FOLDER = UniGo66
 
 
 #
@@ -55,9 +55,9 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 # Build Options
 #   comment out to disable the options.
 #
-# BOOTMAGIC_ENABLE	= yes	# Virtual DIP switch configuration(+1000)
+BOOTMAGIC_ENABLE = lite	# Virtual DIP switch configuration(+1000)
 # MOUSEKEY_ENABLE		= yes	# Mouse keys(+4700)
-EXTRAKEY_ENABLE		= yes	# Audio control and System control(+450)
+EXTRAKEY_ENABLE = yes	# Audio control and System control(+450)
 # CONSOLE_ENABLE		= yes	# Console for debug(+400)
 # COMMAND_ENABLE		= yes  # Commands for debug and configuration
 # SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
@@ -66,4 +66,5 @@ EXTRAKEY_ENABLE		= yes	# Audio control and System control(+450)
 USB_HID_ENABLE = yes
 
 CUSTOM_MATRIX = yes
-SRC += custom_matrix.cpp
+SRC += custom_matrix.cpp \
+			 main.c
